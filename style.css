@@ -1,57 +1,153 @@
+:root{
+    font-size: 18px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
-    background: url(./images/bg-pattern-top.svg), 
-    url(./images/bg-pattern-bottom.svg),
-    linear-gradient(hsl(185, 75%, 39%),hsl(185, 75%, 39%));
-
-    background-position: top 450% right 230%, top 300px left 720px, center;
-    background-repeat: no-repeat, no-repeat;
-    background-attachment: fixed;
-
     font-family: 'Kumbh Sans', sans-serif;
 }
 
-.wallpaper{
-    background: url(./images/bg-pattern-card.svg);
-    height: 150px;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-}
-.container{
-    margin: 30vh 0;
-    padding: 0;
+section{
+    background: hsl(185, 75%, 39%);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: hidden;
+    overflow: -moz-hidden-unscrollable;
+
 }
 
 .card{
-    width: 300px;
-    border-radius: 20px;
+    width: 340px;
+    border-radius: 15px;
     background: aliceblue;
-    padding-bottom: 10px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
 }
 
-.profile-picture {
+.card-header{
+    background-image: url(images/bg-pattern-card.svg);
+    background-size: cover;
+    height: 150px;
+}
+
+.card-body{
+    padding:0 20px 25px;
+}
+
+.img-holder{
     width: 110px;
-    height: 110px;
-    border-radius: 100%;
+    height: auto;
+    border-radius: 50%;
     border: 5px solid white;
     overflow: hidden;
-    margin: -55px auto 30px auto;
-  }
-  
-  .profile-picture img {
+    margin: -55px auto 10px auto;
+}
+
+.img-holder img{
     width: 100%;
+    height: auto;
     display: block;
-  
-  }
+}
 
-  .information{
-      text-align: center;
-  }
+.name-age{
+    font-size: 1rem;
+    margin: 20px 0px 10px 0px;
+    
+}
 
-  .info{
-      display: flex;
-      justify-content: space-evenly;
-  }
+.age{
+    font-size: 1rem;
+    margin-left: 6px;
+}
+
+.city{
+    font-size: 0.8rem;
+}
+
+.age, .city, .meta{
+    font-weight: 400;
+    color: hsl(0, 11%, 12%);
+    opacity: 0.6;
+}
+
+.card-footer{
+    border-top: 1px solid hsl(0, 3%, 86%);
+    display: flex;
+    padding: 0 35px;
+}
+
+.card-footer .item{
+    flex: 1;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-footer .item .value{
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.card-footer .item .meta{
+    font-size: 0.6rem;
+    letter-spacing: 1.5px;
+}
+
+/* Graphics Circle */
+
+.circles .c1, .circles .c2{
+    width: 80%;
+    height: auto;
+    position: absolute;
+    animation: 2s circles forwards;
+    opacity: 0;
+}
+
+.circles .c1{
+    bottom: 200px;
+    right: 700px;
+    transform: translate(-100px, -100px);
+}
+
+.circles .c2{
+    top: 350px;
+    left: 600px;
+    transform: translate(100px, 100px);
+}
+
+@keyframes circles{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@media (max-width:678px) 
+{
+    .circles .c1{
+        bottom: 450px;
+        right: 300px;
+        transform: translate(-100px, -100px);
+    }
+    
+    .circles .c2{
+        top: 350px;
+        left: 300px;
+        transform: translate(100px, 100px);
+    }
+}
